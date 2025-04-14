@@ -10,4 +10,4 @@
     - Postpone Break
     - Resume Timer
     - Open Settings
-- Added check for LookAway v1.11.3+ installation. 
+- Added check for LookAway v1.11.3+ installation.

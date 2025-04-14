@@ -14,4 +14,4 @@ Control the [LookAway](https://lookaway.app) macOS app using Raycast.
 
 ## Requirements
 
-Requires LookAway version 1.11.3 or later installed. 
+Requires LookAway version 1.11.3 or later installed.

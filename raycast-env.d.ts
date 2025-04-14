@@ -13,36 +13,35 @@ type ExtensionPreferences = {}
 declare type Preferences = ExtensionPreferences
 
 declare namespace Preferences {
-  /** Preferences accessible in the `startNextBreak` command */
-  export type StartNextBreak = ExtensionPreferences & {}
-  /** Preferences accessible in the `startLongBreak` command */
-  export type StartLongBreak = ExtensionPreferences & {}
-  /** Preferences accessible in the `pauseTimer` command */
-  export type PauseTimer = ExtensionPreferences & {}
-  /** Preferences accessible in the `pauseTimerTemporarily` command */
-  export type PauseTimerTemporarily = ExtensionPreferences & {}
-  /** Preferences accessible in the `postponeBreak` command */
-  export type PostponeBreak = ExtensionPreferences & {}
-  /** Preferences accessible in the `resumeTimer` command */
-  export type ResumeTimer = ExtensionPreferences & {}
-  /** Preferences accessible in the `openSettings` command */
-  export type OpenSettings = ExtensionPreferences & {}
+    /** Preferences accessible in the `startNextBreak` command */
+    export type StartNextBreak = ExtensionPreferences & {}
+    /** Preferences accessible in the `startLongBreak` command */
+    export type StartLongBreak = ExtensionPreferences & {}
+    /** Preferences accessible in the `pauseTimer` command */
+    export type PauseTimer = ExtensionPreferences & {}
+    /** Preferences accessible in the `pauseTimerTemporarily` command */
+    export type PauseTimerTemporarily = ExtensionPreferences & {}
+    /** Preferences accessible in the `postponeBreak` command */
+    export type PostponeBreak = ExtensionPreferences & {}
+    /** Preferences accessible in the `resumeTimer` command */
+    export type ResumeTimer = ExtensionPreferences & {}
+    /** Preferences accessible in the `openSettings` command */
+    export type OpenSettings = ExtensionPreferences & {}
 }
 
 declare namespace Arguments {
-  /** Arguments passed to the `startNextBreak` command */
-  export type StartNextBreak = {}
-  /** Arguments passed to the `startLongBreak` command */
-  export type StartLongBreak = {}
-  /** Arguments passed to the `pauseTimer` command */
-  export type PauseTimer = {}
-  /** Arguments passed to the `pauseTimerTemporarily` command */
-  export type PauseTimerTemporarily = {}
-  /** Arguments passed to the `postponeBreak` command */
-  export type PostponeBreak = {}
-  /** Arguments passed to the `resumeTimer` command */
-  export type ResumeTimer = {}
-  /** Arguments passed to the `openSettings` command */
-  export type OpenSettings = {}
+    /** Arguments passed to the `startNextBreak` command */
+    export type StartNextBreak = {}
+    /** Arguments passed to the `startLongBreak` command */
+    export type StartLongBreak = {}
+    /** Arguments passed to the `pauseTimer` command */
+    export type PauseTimer = {}
+    /** Arguments passed to the `pauseTimerTemporarily` command */
+    export type PauseTimerTemporarily = {}
+    /** Arguments passed to the `postponeBreak` command */
+    export type PostponeBreak = {}
+    /** Arguments passed to the `resumeTimer` command */
+    export type ResumeTimer = {}
+    /** Arguments passed to the `openSettings` command */
+    export type OpenSettings = {}
 }
-
