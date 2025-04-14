@@ -1,10 +1,6 @@
 import { getApplications, showToast, Toast, showHUD } from "@raycast/api";
 import { runAppleScript } from "@raycast/utils";
 
-export interface CommandArguments {
-  duration?: string;
-}
-
 export const APP_NAME = "LookAway";
 export const REQUIRED_VERSION = "1.11.3";
 export const APP_BUNDLE_ID = "com.mysticalbits.lookaway"; // Ensure this is correct!
@@ -65,7 +61,7 @@ export async function runLookAwayCommand(
   commandName: string,
   commandCode: string,
   successMessage: string,
-  args?: CommandArguments,
+  durationSeconds?: number,
 ) {
   if (!(await isLookAwayInstalledAndRecent())) {
     return;
@@ -78,24 +74,35 @@ export async function runLookAwayCommand(
   switch (commandCode) {
     case "paustemp":
     case "pstpnbrk": {
-      if (!args?.duration || isNaN(parseInt(args.duration, 10)) || parseInt(args.duration, 10) <= 0) {
+      if (durationSeconds === undefined || durationSeconds <= 0) {
         await showToast({
           style: Toast.Style.Failure,
           title: "Invalid Duration",
-          message: "Please enter a positive number for the duration in seconds.",
+          message: "Duration must be a positive number of seconds.",
         });
         return;
       }
-      const durationSeconds = parseInt(args.duration, 10);
       if (commandCode === "paustemp") {
         script = `tell application id "${APP_BUNDLE_ID}" to pause temporarily for ${durationSeconds}`;
       } else { // pstpnbrk
         script = `tell application id "${APP_BUNDLE_ID}" to postpone break by ${durationSeconds}`;
       }
-      finalSuccessMessage = `${successMessage} for ${durationSeconds} seconds`;
+      const hours = Math.floor(durationSeconds / 3600);
+      const minutes = Math.floor((durationSeconds % 3600) / 60);
+      const seconds = durationSeconds % 60;
+      
+      let formattedDuration = '';
+      if (hours > 0) formattedDuration += `${hours}h`;
+      if (minutes > 0) formattedDuration += `${formattedDuration ? ' ' : ''}${minutes}m`;
+      if (seconds > 0 || (hours === 0 && minutes === 0)) formattedDuration += `${formattedDuration ? ' ' : ''}${seconds}s`;
+      
+      finalSuccessMessage = `${successMessage} for ${formattedDuration}`;
       break;
     }
     default:
+      if (durationSeconds !== undefined) {
+        console.warn(`Duration argument provided for command '${commandName}' which does not support it.`);
+      }
       script = `tell application id "${APP_BUNDLE_ID}" to ${commandName}`;
       break;
   }

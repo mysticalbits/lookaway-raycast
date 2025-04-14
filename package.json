@@ -22,42 +22,26 @@
     },
     {
       "name": "pauseTimer",
-      "title": "Pause Timer",
-      "description": "Pauses the LookAway timer indefinitely.",
+      "title": "Pause Work Mode",
+      "description": "Pauses the LookAway work mode indefinitely.",
       "mode": "no-view"
     },
     {
       "name": "pauseTimerTemporarily",
-      "title": "Pause Timer Temporarily",
-      "description": "Pauses the LookAway timer for a specific duration.",
-      "mode": "no-view",
-      "arguments": [
-        {
-          "name": "duration",
-          "placeholder": "Duration (seconds)",
-          "type": "text",
-          "required": true
-        }
-      ]
+      "title": "Pause Work Mode Temporarily",
+      "description": "Pauses the LookAway work mode for a specific duration.",
+      "mode": "view"
     },
     {
       "name": "postponeBreak",
       "title": "Postpone Break",
       "description": "Postpones the upcoming break by a specific duration.",
-      "mode": "no-view",
-      "arguments": [
-        {
-          "name": "duration",
-          "placeholder": "Duration (seconds)",
-          "type": "text",
-          "required": true
-        }
-      ]
+      "mode": "view"
     },
     {
       "name": "resumeTimer",
-      "title": "Resume Timer",
-      "description": "Resumes the LookAway timer if paused.",
+      "title": "Resume Work Mode",
+      "description": "Resumes the LookAway work mode if paused.",
       "mode": "no-view"
     },
     {

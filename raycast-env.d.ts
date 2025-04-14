@@ -37,15 +37,9 @@ declare namespace Arguments {
   /** Arguments passed to the `pauseTimer` command */
   export type PauseTimer = {}
   /** Arguments passed to the `pauseTimerTemporarily` command */
-  export type PauseTimerTemporarily = {
-  /** Duration (seconds) */
-  "duration": string
-}
+  export type PauseTimerTemporarily = {}
   /** Arguments passed to the `postponeBreak` command */
-  export type PostponeBreak = {
-  /** Duration (seconds) */
-  "duration": string
-}
+  export type PostponeBreak = {}
   /** Arguments passed to the `resumeTimer` command */
   export type ResumeTimer = {}
   /** Arguments passed to the `openSettings` command */
