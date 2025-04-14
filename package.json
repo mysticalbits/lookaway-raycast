@@ -6,6 +6,7 @@
     "description": "Control the Lookaway app for managing breaks.",
     "icon": "lookaway-icon.png",
     "author": "kush",
+    "categories": ["Applications", "Productivity"], 
     "license": "MIT",
     "commands": [
         {
